@@ -1,23 +1,29 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { ToastrService } from 'ngx-toastr'
 
-import { SetComponent } from './set.component';
+import { SetComponent } from './set.component'
 
 describe('SetComponent', () => {
-  let component: SetComponent;
-  let fixture: ComponentFixture<SetComponent>;
+  let component: SetComponent
+  let fixture: ComponentFixture<SetComponent>
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SetComponent]
-    })
-    .compileComponents();
+      imports: [SetComponent],
+      providers: [
+        {
+          provide: ToastrService,
+          useValue: {},
+        },
+      ],
+    }).compileComponents()
 
-    fixture = TestBed.createComponent(SetComponent);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
-  });
+    fixture = TestBed.createComponent(SetComponent)
+    component = fixture.componentInstance
+    await fixture.whenStable()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

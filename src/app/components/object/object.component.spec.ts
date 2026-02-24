@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { ToastrService } from 'ngx-toastr'
 
 import { ObjectComponent } from './object.component'
 
@@ -9,6 +10,12 @@ describe('ObjectComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ObjectComponent],
+      providers: [
+        {
+          provide: ToastrService,
+          useValue: {},
+        },
+      ],
     }).compileComponents()
 
     fixture = TestBed.createComponent(ObjectComponent)
