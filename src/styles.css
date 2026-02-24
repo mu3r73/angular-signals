@@ -1,0 +1,17 @@
+/* [data-bs-theme='dark'] .btn-outline-success { */
+/*   --bs-btn-color: var(--bs-success-text-emphasis); */
+/*   --bs-btn-border-color: rgba(var(--bs-success-rgb), 0.5); */
+/*   background-color: rgba(var(--bs-success-rgb), 0.2); */
+/* } */
+
+/* [data-bs-theme='dark'] .btn-outline-danger { */
+/*   --bs-btn-color: var(--bs-danger-text-emphasis); */
+/*   --bs-btn-border-color: rgba(var(--bs-danger-rgb), 0.5); */
+/*   background-color: rgba(var(--bs-danger-rgb), 0.2); */
+/* } */
+
+/* [data-bs-theme='dark'] .btn-outline-info { */
+/*   --bs-btn-color: var(--bs-info-text-emphasis); */
+/*   --bs-btn-border-color: rgba(var(--bs-info-rgb), 0.5); */
+/*   background-color: rgba(var(--bs-info-rgb), 0.2); */
+/* } */

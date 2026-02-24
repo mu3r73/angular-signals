@@ -1,0 +1,56 @@
+<div class="card m-1">
+  <div class="card-header px-4 py-3 d-flex justify-content-between">
+    <h3>set</h3>
+    <button class="btn btn-sm btn-outline-info my-1"
+      (click)="resetSet()"
+    >
+      reset
+    </button>
+  </div>
+  <div class="card-body px-0">
+    <div class="px-4">
+      <h6>items (signal value)</h6>
+      <pre class="text-success-emphasis">{{ Array.from(set()) | json }}</pre>
+      <h6>item count (signal value count)</h6>
+      <pre class="text-success-emphasis">{{ set().size }}</pre>
+    </div>
+    <hr />
+    <div class="px-4">
+      <div class="d-flex align-items-center">
+        <button class="btn btn-sm btn-success my-1"
+          (click)="addItemToSetSignalUpdateNewSet()">
+          &plus; item
+        </button>
+        <small class="ms-2">update returns new set</small>
+      </div>
+      <div class="d-flex align-items-center">
+        <button class="btn btn-sm btn-danger my-1"
+          (click)="addItemToSetSignalUpdateSameSet()">
+          &plus; item
+        </button>
+        <small class="ms-2">update returns same set</small>
+      </div>
+      <div class="d-flex align-items-center">
+        <button class="btn btn-sm btn-danger my-1"
+          (click)="addItemToSetBypassSignalUpdate()">
+          &plus; item
+        </button>
+        <small class="ms-2">bypasses update</small>
+      </div>
+    </div>
+    <hr />
+    <div class="px-4">
+      <h6>item count (computed)</h6>
+      <pre
+        [class.text-success-emphasis]="set().size === setItemCount()"
+        [class.text-danger-emphasis]="set().size !== setItemCount()"
+      >{{ setItemCount() }}</pre>
+      <h6>items, value &times; 2 (effect)</h6>
+      <pre
+        [class.text-success-emphasis]="set().size === setItemCount()"
+        [class.text-danger-emphasis]="set().size !== setItemCount()"
+      >{{ Array.from(setValuesDoubled()) | json }}</pre>
+    </div>
+  </div>
+</div>
+

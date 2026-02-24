@@ -1,9 +1,13 @@
 import { Component } from '@angular/core'
-import { RouterOutlet } from '@angular/router'
+
+import { ArrayComponent } from './components/array/array.component'
+import { ObjectComponent } from './components/object/object.component'
+import { SetComponent } from './components/set/set.component'
+import { MapComponent } from './components/map/map.component'
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [ArrayComponent, ObjectComponent, SetComponent, MapComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

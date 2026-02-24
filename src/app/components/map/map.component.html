@@ -1,0 +1,55 @@
+<div class="card m-1">
+  <div class="card-header px-4 py-3 d-flex justify-content-between">
+    <h3>map</h3>
+    <button class="btn btn-sm btn-outline-info my-1"
+      (click)="resetMap()"
+    >
+      reset
+    </button>
+  </div>
+  <div class="card-body px-0">
+    <div class="px-4">
+      <h6>items (signal value)</h6>
+      <pre class="text-success-emphasis">{{ Object.fromEntries(map()) | json }}</pre>
+      <h6>item count (signal value count)</h6>
+      <pre class="text-success-emphasis">{{ map().size }}</pre>
+    </div>
+    <hr />
+    <div class="px-4">
+      <div class="d-flex align-items-center">
+        <button class="btn btn-sm btn-success my-1"
+          (click)="addItemToMapSignalUpdateNewMap()">
+          &plus; item
+        </button>
+        <small class="ms-2">update returns new map</small>
+      </div>
+      <div class="d-flex align-items-center">
+        <button class="btn btn-sm btn-danger my-1"
+          (click)="addItemToMapSignalUpdateSameMap()">
+          &plus; item
+        </button>
+        <small class="ms-2">update returns same map</small>
+      </div>
+      <div class="d-flex align-items-center">
+        <button class="btn btn-sm btn-danger my-1"
+          (click)="addItemToMapBypassingSignalUpdate()">
+          &plus; item
+        </button>
+        <small class="ms-2">bypasses update</small>
+      </div>
+    </div>
+    <hr />
+    <div class="px-4">
+      <h6>item count (computed)</h6>
+      <pre
+        [class.text-success-emphasis]="map().size === mapItemCount()"
+        [class.text-danger-emphasis]="map().size !== mapItemCount()"
+      >{{ mapItemCount() }}</pre>
+      <h6>items, value &times; 2 (effect)</h6>
+      <pre
+        [class.text-success-emphasis]="map().size === mapItemCount()"
+        [class.text-danger-emphasis]="map().size !== mapItemCount()"
+      >{{ Object.fromEntries(mapItemsValueDoubled()) | json }}</pre>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="card m-1">
+  <div class="card-header px-4 py-3 d-flex justify-content-between">
+    <h3>array</h3>
+    <button class="btn btn-sm btn-outline-info my-1"
+      (click)="resetArray()"
+    >
+      reset
+    </button>
+  </div>
+  <div class="card-body px-0">
+    <div class="px-4">
+      <h6>items (signal value)</h6>
+      <pre class="text-success-emphasis">{{ arr() | json }}</pre>
+      <h6>item count (signal value count)</h6>
+      <pre class="text-success-emphasis">{{ arr().length }}</pre>
+    </div>
+    <hr />
+    <div class="px-4">
+      <div class="d-flex align-items-center">
+        <button class="btn btn-sm btn-success my-1"
+          (click)="addItemToArraySignalUpdateNewArray()">
+          &plus; item
+        </button>
+        <small class="ms-2">update returns new array</small>
+      </div>
+      <div class="d-flex align-items-center">
+        <button class="btn btn-sm btn-danger my-1"
+          (click)="addItemToArraySignalUpdateSameArray()">
+          &plus; item
+        </button>
+        <small class="ms-2">update returns same array</small>
+      </div>
+      <div class="d-flex align-items-center">
+        <button class="btn btn-sm btn-danger my-1"
+          (click)="addItemToArrayBypassSignalUpdate()">
+          &plus; item
+        </button>
+        <small class="ms-2">bypasses update</small>
+      </div>
+    </div>
+    <hr />
+    <div class="px-4">
+      <h6>item count (computed)</h6>
+      <pre
+        [class.text-success-emphasis]="arr().length === arrLength()"
+        [class.text-danger-emphasis]="arr().length !== arrLength()"
+      >{{ arrLength() }}</pre>
+      <h6>items, value &times; 2 (effect)</h6>
+      <pre
+        [class.text-success-emphasis]="arr().length === arrLength()"
+        [class.text-danger-emphasis]="arr().length !== arrLength()"
+      >{{ arrValuesDoubled() | json }}</pre>
+    </div>
+  </div>
+</div>

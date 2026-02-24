@@ -1,5 +1,7 @@
 # AngularSignalsNChangeDetection
 
+Showing how change detection can "break" for signals containing non-primitive data.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.5.
 
 ## Development server
