@@ -1,4 +1,4 @@
-# AngularSignalsNChangeDetection
+# angular signals and change detection
 
 Showing how change detection can "break" for signals containing non-primitive data.
 
