@@ -1,6 +1,6 @@
 # angular signals and change detection
 
-Showing how change detection can "break" for signals containing non-primitive data.
+Showing how change detection can be "broken" for signals containing non-primitive data, by not using .update() as intended.
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.5.
 
