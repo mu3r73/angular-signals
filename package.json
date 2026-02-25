@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "ghpages": "ng deploy --base-href=/angular-signals/"
   },
   "prettier": {
     "printWidth": 100,
